@@ -1,5 +1,6 @@
 from pydantic import BaseModel, Field
 from datetime import date as date_type
+from typing import Optional
 
 
 class BaseMovie(BaseModel):
@@ -41,7 +42,7 @@ class BaseRating(BaseModel):
         le=5,
         example=4.5,
     )
-    description: str | None = Field(
+    description: Optional[str] = Field(
         default=None,
         description="Description about the rating",
         max_length=500,
